@@ -76,4 +76,6 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(CallbackQueryHandler(show_lesson, pattern="^lesson_"))
 app.add_handler(CallbackQueryHandler(subscribe, pattern="^subscribe"))
 app.job_queue.run_daily(send_daily_lesson, time=datetime.time(hour=4, minute=0, second=0))
+import asyncio
+asyncio.set_event_loop(asyncio.new_event_loop())
 app.run_polling()
