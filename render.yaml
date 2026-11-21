@@ -1,6 +1,7 @@
 services:
-    - type: worker
-    name: vibe-coding-bot
+    - type: web
+    name: vibe-bot
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
+    plan: free
